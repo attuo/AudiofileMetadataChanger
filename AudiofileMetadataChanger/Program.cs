@@ -26,8 +26,8 @@ namespace AudiofileMetadataChanger
                     try
                     {
                         TagLib.File file = TagLib.File.Create(filename);
-                        file.Tag.Title = songName[1];
-                        string[] perfs = new string[] { songName[0] };
+                        file.Tag.Title = songName[1].Trim();
+                        string[] perfs = new string[] { songName[0].Trim() };
                         file.Tag.Performers = perfs;
                         file.Save();
                         Console.WriteLine("Write succesful: " + number + " " + Path.GetFileName(filename));
